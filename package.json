@@ -5,7 +5,9 @@
   "main": "src/index.jsx",
   "devDependencies": {
     "@babel/preset-env": "^7.10.2",
-    "@babel/preset-react": "^7.10.1"
+    "@babel/preset-react": "^7.10.1",
+    "css-loader": "^3.6.0",
+    "style-loader": "^1.2.1"
   },
   "homepage": "https://github.com/shayanypn/attendance#readme",
   "scripts": {
