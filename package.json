@@ -6,8 +6,18 @@
   "devDependencies": {
     "@babel/preset-env": "^7.10.2",
     "@babel/preset-react": "^7.10.1",
+    "css-hot-loader": "^1.4.4",
     "css-loader": "^3.6.0",
-    "style-loader": "^1.2.1"
+    "mini-css-extract-plugin": "^0.9.0",
+    "postcss-import": "^12.0.1",
+    "postcss-inline-svg": "^4.1.0",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "postcss-svgo": "^4.0.2",
+    "sass": "^1.26.8",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.43.0"
   },
   "homepage": "https://github.com/shayanypn/attendance#readme",
   "scripts": {
@@ -33,7 +43,6 @@
     "html-webpack-plugin": "^4.3.0",
     "react-dom": "^16.13.1",
     "react": "^16.13.1",
-    "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.2.1"
   }
