@@ -8,6 +8,7 @@
     "@babel/preset-react": "^7.10.1",
     "css-hot-loader": "^1.4.4",
     "css-loader": "^3.6.0",
+    "gh-pages": "^3.0.0",
     "mini-css-extract-plugin": "^0.9.0",
     "postcss-import": "^12.0.1",
     "postcss-inline-svg": "^4.1.0",
@@ -19,10 +20,12 @@
     "style-loader": "^1.2.1",
     "webpack": "^4.43.0"
   },
-  "homepage": "https://github.com/shayanypn/attendance#readme",
+  "homepage": "https://shayanypn.github.io/attendance",
   "scripts": {
     "start": "webpack-dev-server --mode development --config webpack.config.js --color",
     "build": "webpack --mode production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
