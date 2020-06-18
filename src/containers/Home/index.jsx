@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Form from '../../components/Form/index.jsx';
+import Form2 from "../../components/Form/Form2.js";
 
 class Home extends Component {
   render() {
@@ -17,6 +18,7 @@ class Home extends Component {
 				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     		</p>
     		<Form />
+			<Form2 />
     	</section>
     );
   }
