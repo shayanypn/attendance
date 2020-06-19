@@ -9,14 +9,10 @@ class Form extends Component {
     upload.click();
   };
 
-  handleNameFile = (e) => {
-    this.setState({fileName: e.target.value})
-  }
-
   render() {
     return (
       <div className="upload-file">
-        <input type="file" id="upload" accept=".xlsx, .xls" onChange={this.handleNameFile} hidden />
+        <input type="file" id="upload" accept=".xlsx, .xls" hidden />
         <button id="btn" onClick={this.handleUpload}>
           Upload file
         </button>
