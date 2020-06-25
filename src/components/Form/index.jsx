@@ -41,8 +41,8 @@ class Form extends Component {
             this.state.data.map((user) => {
               return (
                 <>
-                  <div>
-                    {user[1]} {user[2]} {user[3]} {user[4]}
+                  <div className='data-display'>
+                    <p>{user[1]} {user[2]} {user[3]} {user[4]}</p>
                   </div>
                 </>
               );
