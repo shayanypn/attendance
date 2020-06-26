@@ -23,35 +23,51 @@ class Form extends Component {
     };
   };
 
-  
   render() {
     return (
-      <div className="upload-file">
-        <input
-          type="file"
-          ref="fileUpload"
-          accept=".xlsx, .xls, .csv"
-          hidden
-          onChange={this.handlefile}
-        />
-        <button id="btn" onClick={this.handleUpload}>
-          Upload file
-        </button>
-        <div className="display-data">
-          {this.state.data &&
-            this.state.data.map((user) => {
-              return (
-                <>
-                  <div className="data-display">
-                    <p>
-                    {user[1]} {user[2]} {user[3]} {user[4]}
-                    </p>
-                  </div>
-                </>
-              );
-            })}
+      <>
+        <div className="form-group">
+          <input
+            type="file"
+            ref="fileUpload"
+            accept=".xlsx, .xls, .csv"
+            hidden
+            onChange={this.handlefile}
+            className="form-control-file"
+          />
+
+          <button id="btn" onClick={this.handleUpload} class="btn btn-primary">
+            Upload file
+          </button>
         </div>
-      </div>
+        <div class="table-responsive-md">
+          <table className="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">LastName</th>
+                <th scope="col">e-mail</th>
+                <th scope="col">gender</th>
+              </tr>
+            </thead>
+            {this.state.data &&
+              this.state.data.map((user) => {
+                return (
+                  <tbody>
+                    <tr>
+                      <th scope="row">{user[0]}</th>
+                      <th>{user[1]}</th>
+                      <th>{user[2]}</th>
+                      <th>{user[3]}</th>
+                      <th>{user[4]}</th>
+                    </tr>
+                  </tbody>
+                );
+              })}
+          </table>
+        </div>
+      </>
     );
   }
 }
