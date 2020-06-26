@@ -1,21 +1,30 @@
 
-@import './variables.scss';
 
+@import './variables.scss';
+@import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 body {
-	background: var(--main-base-color)
+	background: var(--primary-color-lighter);
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+h1 {
+	font-weight: 100;
+	color: var(--primary-color);
+}
+p {
+	color: var(--primary-color-darker);
 }
 
-
-
-
 .section {
+	box-shadow: 0 0 10px var(--main-base-color);
+
 	&--main {
-		border-radius: 4px;
+		border-radius: var(--border-radius);
 		background: var(--main-bg-color);
 		padding: 15px;
 		margin: 30px auto;
-		max-width: 700px;
 	}
 }
