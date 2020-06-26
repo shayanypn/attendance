@@ -22,6 +22,8 @@ class Form extends Component {
       this.setState({ data: fileFormatted });
     };
   };
+
+  
   render() {
     return (
       <div className="upload-file">
