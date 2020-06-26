@@ -19,7 +19,6 @@ class Form extends Component {
         .slice(1)
         .map((line) => line.split(","));
       console.log(fileFormatted);
-      // document.querySelector('.display-data').innerText = fileFormatted;
       this.setState({ data: fileFormatted });
     };
   };
@@ -41,8 +40,10 @@ class Form extends Component {
             this.state.data.map((user) => {
               return (
                 <>
-                  <div className='data-display'>
-                    <p>{user[1]} {user[2]} {user[3]} {user[4]}</p>
+                  <div className="data-display">
+                    <p>
+                    {user[1]} {user[2]} {user[3]} {user[4]}
+                    </p>
                   </div>
                 </>
               );
