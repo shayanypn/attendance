@@ -1,7 +1,9 @@
 import React, { Component } from "react";
+
 class Form extends Component {
   state = {
     data: null,
+    
   };
 
   handleUpload = () => {
@@ -16,11 +18,12 @@ class Form extends Component {
       let fileToDisplay = e.target.result;
       let fileFormatted = fileToDisplay
         .split("\n")
-        // .slice(1)
         .map((line) => line.split(","));
       console.log(fileFormatted);
       this.setState({ data: fileFormatted });
     };
+    let btn = document.querySelector('.form-group');
+    btn.style.display = 'none';
   };
 
   render() {
@@ -34,37 +37,31 @@ class Form extends Component {
             hidden
             onChange={this.handlefile}
             className="form-control-file"
+            
           />
 
-          <button id="btn" onClick={this.handleUpload} class="btn btn-primary">
+          <button
+            id="btn"
+            onClick={this.handleUpload}
+            className="btn btn-primary"
+          >
             Upload file
           </button>
         </div>
-        <div class="table-responsive-md">
+        <div className="table-responsive-md">
           <table className="table table-hover">
-            {/* <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">LastName</th>
-                <th scope="col">e-mail</th>
-                <th scope="col">gender</th>
-              </tr>
-            </thead> */}
-            {this.state.data &&
-              this.state.data.map((user) => {
-                return (
-                  <tbody>
+            <tbody>
+              {this.state.data &&
+                this.state.data.map((user) => {
+                  return (
                     <tr>
-                      <th scope="row">{user[0]}</th>
-                      <th>{user[1]}</th>
-                      <th>{user[2]}</th>
-                      <th>{user[3]}</th>
-                      <th>{user[4]}</th>
+                      {user.map((el) => {
+                        return <th>{el}</th>;
+                      })}
                     </tr>
-                  </tbody>
-                );
-              })}
+                  );
+                })}
+            </tbody>
           </table>
         </div>
       </>
