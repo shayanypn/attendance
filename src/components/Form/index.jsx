@@ -16,7 +16,7 @@ class Form extends Component {
       let fileToDisplay = e.target.result;
       let fileFormatted = fileToDisplay
         .split("\n")
-        .slice(1)
+        // .slice(1)
         .map((line) => line.split(","));
       console.log(fileFormatted);
       this.setState({ data: fileFormatted });
@@ -42,7 +42,7 @@ class Form extends Component {
         </div>
         <div class="table-responsive-md">
           <table className="table table-hover">
-            <thead>
+            {/* <thead>
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
@@ -50,7 +50,7 @@ class Form extends Component {
                 <th scope="col">e-mail</th>
                 <th scope="col">gender</th>
               </tr>
-            </thead>
+            </thead> */}
             {this.state.data &&
               this.state.data.map((user) => {
                 return (
