@@ -1,9 +1,9 @@
 import React, { Component } from "react";
+import DisplayTable from "./DisplatTable";
 
 class Form extends Component {
   state = {
     data: null,
-    
   };
 
   handleUpload = () => {
@@ -22,9 +22,9 @@ class Form extends Component {
       console.log(fileFormatted);
       this.setState({ data: fileFormatted });
     };
-    let btn = document.querySelector('.form-group');
-    btn.style.display = 'none';
   };
+
+  handleDisplayData = () => {};
 
   render() {
     return (
@@ -37,9 +37,7 @@ class Form extends Component {
             hidden
             onChange={this.handlefile}
             className="form-control-file"
-            
           />
-
           <button
             id="btn"
             onClick={this.handleUpload}
@@ -48,22 +46,7 @@ class Form extends Component {
             Upload file
           </button>
         </div>
-        <div className="table-responsive-md">
-          <table className="table table-hover">
-            <tbody>
-              {this.state.data &&
-                this.state.data.map((user) => {
-                  return (
-                    <tr>
-                      {user.map((el) => {
-                        return <th>{el}</th>;
-                      })}
-                    </tr>
-                  );
-                })}
-            </tbody>
-          </table>
-        </div>
+        <DisplayTable data={this.handleDisplayData} />
       </>
     );
   }
