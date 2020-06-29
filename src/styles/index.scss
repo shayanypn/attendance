@@ -4,5 +4,18 @@
 
 
 body {
-	background: var(--main-bg-color)
+	background: var(--main-base-color)
+}
+
+
+
+
+.section {
+	&--main {
+		border-radius: 4px;
+		background: var(--main-bg-color);
+		padding: 15px;
+		margin: 30px auto;
+		max-width: 700px;
+	}
 }
