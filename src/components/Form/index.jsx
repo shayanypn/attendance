@@ -20,14 +20,16 @@ class Form extends Component {
         .split("\n")
         .map((line) => line.split(","));
       this.setState({ data: fileFormatted });
-      
     };
   };
 
   render() {
     return (
       <>
-        <div className="form-group">
+        
+        {this.state.data.length ? (
+          <DisplayTable data={this.state.data} />
+         ) : (<div className="form-group">
           <input
             type="file"
             ref="fileUpload"
@@ -36,7 +38,6 @@ class Form extends Component {
             onChange={this.handlefile}
             className="form-control-file"
           />
-
           <button
             id="btn"
             onClick={this.handleUpload}
@@ -45,7 +46,7 @@ class Form extends Component {
             Upload file
           </button>
         </div>
-        {this.state.data.length ? <DisplayTable data={this.state.data} />  : ""}
+         )}
       </>
     );
   }
