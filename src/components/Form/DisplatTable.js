@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 
 const DisplayTable = (props) => {
-    
-
   return (
     <div className="table-responsive-lg">
       <table className="table table-hover">

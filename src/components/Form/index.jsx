@@ -3,7 +3,7 @@ import DisplayTable from "./DisplatTable";
 
 class Form extends Component {
   state = {
-    data: null,
+    data: [],
   };
 
   handleUpload = () => {
@@ -19,12 +19,10 @@ class Form extends Component {
       let fileFormatted = fileToDisplay
         .split("\n")
         .map((line) => line.split(","));
-      console.log(fileFormatted);
       this.setState({ data: fileFormatted });
+      
     };
   };
-
-  handleDisplayData = () => {};
 
   render() {
     return (
@@ -38,6 +36,7 @@ class Form extends Component {
             onChange={this.handlefile}
             className="form-control-file"
           />
+
           <button
             id="btn"
             onClick={this.handleUpload}
@@ -46,7 +45,7 @@ class Form extends Component {
             Upload file
           </button>
         </div>
-        <DisplayTable data={this.handleDisplayData} />
+        {this.state.data.length ? <DisplayTable data={this.state.data} />  : ""}
       </>
     );
   }
