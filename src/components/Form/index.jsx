@@ -26,27 +26,27 @@ class Form extends Component {
   render() {
     return (
       <>
-        
         {this.state.data.length ? (
           <DisplayTable data={this.state.data} />
-         ) : (<div className="form-group">
-          <input
-            type="file"
-            ref="fileUpload"
-            accept=".xlsx, .xls, .csv"
-            hidden
-            onChange={this.handlefile}
-            className="form-control-file"
-          />
-          <button
-            id="btn"
-            onClick={this.handleUpload}
-            className="btn btn-primary"
-          >
-            Upload file
-          </button>
-        </div>
-         )}
+        ) : (
+          <div className="form-group">
+            <input
+              type="file"
+              ref="fileUpload"
+              accept=".xlsx, .xls, .csv"
+              hidden
+              onChange={this.handlefile}
+              className="form-control-file"
+            />
+            <button
+              id="btn"
+              onClick={this.handleUpload}
+              className="btn btn-primary"
+            >
+              Upload file
+            </button>
+          </div>
+        )}
       </>
     );
   }

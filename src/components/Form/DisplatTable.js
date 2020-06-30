@@ -10,7 +10,7 @@ const DisplayTable = (props) => {
               return (
                 <tr>
                   {user.map((el) => {
-                    return <th>{el}</th>;
+                    return <td>{el}</td>;
                   })}
                 </tr>
               );
